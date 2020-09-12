@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="AuxilioMD" />
+    <meta name="msapplication-TileImage" content="images/hello-icon-144.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+
+    <title>AuxilioMD</title>
+
+    <!-- External Links -->
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/hello-icon-152.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- External Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-functions.js"></script>
+
+    <!-- Internal Files -->
+
+    <link rel="stylesheet" href="css/finalstyles.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo6.png" height="80" class="d-inline-block align-top" alt="" />
+            <div id="nav-text">
+                <h4 id="title">Upper Gastrointestinal Bleeding Risk Score</h4>
+                <h6 id="model-name">
+                    Model used: https://doi.org/10.1053/j.gastro.2019.09.009
+                </h6>
+            </div>
+        </a>
+    </nav>
+
+    <!-- CREATES THE CIRCLE GAUGES THAT UPDATE WITH PATIENT RECORD -->
+    <div id="circleBar">
+        <div class="graphs">
+            <!-- FIRST ROW -->
+
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Systolic BP</span>
+                    <div id="systolic-bp" class="round" data-value="0.57" data-size="160">
+                        <strong></strong>
+                    </div>
+                </div>
+
+                <!-- PULLS RISK CALCULATION FROM HOUSED ML MODEL, SPECIFIC TO EACH PATIENT -->
+                <div class="col-md-6">
+                    <div id="risk-score">
+                        <div id="risk"><b>Very Low Risk</b></div>
+                        <div id="treatment">Consider Outpatient Treatment</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <span>Hemoglobin</span>
+                    <div id="hemoglobin" class="round" data-value="0.17" data-size="160">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECOND ROW -->
+
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Heart Rate</span>
+                    <div id="heart-rate" class="round" data-value="0.27" data-size="160">
+                        <strong></strong>
+                    </div>
+                </div>
+
+                <!-- DISPLAYS RELEVANT CLINICAL INFORMATION IN TABLE FORMAT -->
+                <div class="col-md-6">
+                    <div id="clinical-info">
+                        <div class="col-xs-1" align="center">
+                            <table class="w-25 table table-bordered table-striped">
+                                Relevant Clinical Information
+                                <tbody>
+                                    <tr>
+                                        <th id="liver-disease" scope="row">Liver Disease</th>
+                                        <td>None</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="anticoagulant" scope="row">Anticoagulant</th>
+                                        <td>Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="antiplatelet" scope="row">Antiplatelet</th>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <span>INR</span>
+                    <div id="inr" class="round" data-value="0.27" data-size="160">
+                        <strong></strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CALLS REFRESH -->
+            <button class="btn btn-info" onClick="Circle('.round');">
+          Refresh
+        </button>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Updates all circle gauge readings having "strong" attribute with new value
+         * @param el - HTML selector string
+         */
+
+        function Circle(el) {
+            $(el)
+                .circleProgress({
+                    fill: {
+                        color: "red",
+                    },
+                })
+                .on("circle-animation-progress", function(
+                    event,
+                    progress,
+                    stepValue
+                ) {
+                    console.log(String(stepValue.toFixed(2)).substr(2) + "%");
+                    $(this)
+                        .find("strong")
+                        .text(String(stepValue.toFixed(2)).substr(2) + "%");
+                });
+        }
+        Circle(".round");
+    </script>
+
+    <!-- CORE LOGIC -->
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-functions.js"></script>
+
+    <script src="./js/fhir-client-v0.1.12.js"></script>
+    <script src="./js/smart-app.js"></script>
+    <script src="./js/app.js"></script>
+
+    <script>
+        showPatient("", true);
+    </script>
+</body>
+
+</html>

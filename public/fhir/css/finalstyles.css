@@ -1,0 +1,345 @@
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 14pt;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #ebfcff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 28% 72%;
+    grid-template-rows: minmax(100px, 10%) 90%;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header Section */
+
+#header {
+    grid-area: 1 / 1 / span 1 / span 2;
+    text-align: left;
+    color: white;
+    background-color: #2f1b6e;
+    height: 100%;
+    border-bottom: solid white;
+    /*text-align: center*/
+    /*    box-shadow: 0 4px 2px -2px red;
+*/
+}
+
+/*#title, h2 {
+    margin-left: 25px;
+    
+}*/
+
+#model-name {
+    /*font-size: 14pt;*/
+    /*float: left;*/
+    padding-left: 80px;
+    margin-top: -8px;
+}
+
+#nav-logo {
+    height: 100%;
+    vertical-align: middle;
+    float: left;
+    padding-right: 3%;
+}
+
+/* Container Section */
+
+#analysis {
+    grid-area: 2 / 1 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(223, 244, 245);
+}
+
+#round {
+    border-radius: 0 0px 0px 0;
+    background-color: #ecdeff;
+    width: 100%;
+}
+
+#visualization {
+    grid-area: 2 / 2 / span 1 / span 1;
+    background-color: rgb(223, 244, 245);
+    border-left: 0px solid black;
+    width: 100%;
+    border-radius: 0 0px 0 0;
+    -webkit-box-shadow: 10px 10px 10px 10px #080808;
+    box-shadow: 10px 10px 10px 10px #080808;
+}
+
+/* Analysis Section */
+
+#riskAssessment {
+    border: 2px;
+    font-size: 2em;
+}
+
+/*#qualitative {
+    font-size: 1em;
+}*/
+
+.percent {
+    width: 110px;
+    height: 110px;
+    margin: 10px auto;
+    margin-top: -10%;
+}
+
+.prec {
+    font-size: 30px;
+}
+
+.circle {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: #E6F4F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-border {
+    position: relative;
+    text-align: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    background-color: #39B4CC;
+    background-image: linear-gradient(91deg, transparent 50%, #A2ECFB 50%), linear-gradient(90deg, #A2ECFB 50%, transparent 50%);
+}
+
+#recommendation {
+    border: 0px;
+    font-size: 1.5em;
+    margin-bottom: -30px;
+}
+
+#decision {
+    border: 0px;
+    font-size: 1em;
+}
+
+#model-used {
+    border: 0px;
+    color: gray;
+    font-size: 0.8em;
+}
+
+.button {
+    background-color: rgb(52, 158, 235);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15% auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #99d4ff;
+    transition: 0.3s ease;
+    border: black;
+}
+
+.stamp {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 10px;
+}
+
+/* Visualization Section */
+
+#input-list {
+    width: 30%;
+    float: left;
+    padding-top: 2%;
+    padding-right: 5%;
+}
+
+.modelInput {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 2%;
+    border-bottom: 2px ridge #2f1b6e;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+}
+
+.modelInput:hover {
+    background-color: #ecdeff;
+    transition: 0.5s ease;
+    border-color: #ecdeff;
+}
+
+.modelInput label {
+    padding-left: 10%;
+    float: left;
+    clear: left;
+    width: 70%;
+    text-align: left;
+}
+
+.modelInput input[type=text] {
+    width: 30%;
+    padding: 15px 15px;
+    padding-left: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px 0 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.modelInput input[type=text]:focus, textarea {
+    outline: 2px solid #2f1b6e;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.modelInput input[type="text"], textarea {
+    background-color: white;
+}
+
+#chartContainer {
+    margin: 2.75%;
+    width: 60%;
+}
+
+#disclaimer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 575px;
+    padding: 10px;
+    line-height: 20pt;
+}
+
+#circleBar {
+    margin-top: 0px;
+    /*background-color: green;*/
+    text-align: center;
+    font-family: tahoma;
+}
+
+#circleBar .round {
+    min-height: 200px;
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+#circleBar .strong {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    transform: translate(-50%);
+    font-size: 40px;
+    color: green;
+    font-weight: 100;
+}
+
+#circleBar span {
+    display: block;
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+#circleBar .strong {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    transform: translate(-50%);
+    font-size: 40px;
+    color: green;
+    font-weight: 100;
+}
+
+#circleBar span i {
+    display: block;
+    color: black;
+    font-size: 22px;
+    margin-right: 7px;
+}
+
+section button:hover {
+    background-color: gray;
+}
+
+#clinical-info {
+    margin-top: -20px;
+}
+
+.navbar {
+    background-color: #2f1b6e;
+    margin: -10px 0px;
+    padding: 0px;
+}
+
+#nav-text {
+    display: inline-block;
+}
+
+#title {
+    margin-top: 10px;
+}
+
+#nav-text {
+    /*				font-family: 'Lato', sans-serif;
+*/
+    padding-left: 60px;
+    color: white;
+}
+
+#border {
+    height: 100px;
+}
+
+#risk-score {
+    height: 150px;
+    border: solid;
+    border-width: 10px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+#risk {
+    font-size: 50px;
+}
+
+#treatment {
+    font-size: 30px;
+}

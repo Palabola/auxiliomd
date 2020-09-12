@@ -1,0 +1,11 @@
+Patient ID,First Name,Last Name,Gender,Birth Date,ASA Score ID,ASA Score,Ischemic Heart Disease ID,Ischemic Heart Disease,Cardiac Failure ID,Cardiac Failure,Renal Failure ID,Renal Failure,Liver ID,Liver,Any Malignancy ID,Any Malignancy,Aspirin ID,Aspirin,Adenosine Diphosphate Inhibitors ID,Adenosine Diphosphate Inhibitors,Anticoagulation ID,Anticoagulation,NSAIDs ID,NSAIDs,Pulse ID,Pulse,Blood Pressure ID,Systolic Blood Pressure,Diastolic Blood Pressure,Syncope ID,Syncope,Altered Mental Status ID,Altered Mental Status,Hematemesis ID,Hematemesis,Melena ID,Melena,Hematochezia ID,Hematochezia,Hemoglobin ID,Hemoglobin,Urea ID,Urea,Creatinine ID,Creatinine,Albumin ID,Albumin,INR ID,INR
+146,Abigail,Abraham,female,1992-01-13,147,1,,0,,0,,0,,0,,0,,0,,0,,0,148,1,149,76,154,132,79,,0,,0,159,1,160,1,,0,161,138,166,6.1,171,73,176,40.36675,181,1
+186,Alexandra,Allan,female,1962-02-06,187,1,,0,,0,,0,,0,,0,,0,,0,,0,,0,188,106,193,106,87,,0,,0,198,1,199,1,,0,200,133,205,3.8,210,63,215,41.1287062937063,220,0.93
+225,Alison,Alsop,female,1963-02-01,226,1,,0,,0,,0,,0,,0,,0,,0,,0,,0,227,87,232,148,84,,0,,0,237,1,238,1,,0,239,105,244,4.8,249,53,254,38.8865909090909,259,0.98
+264,Adam,Anderson,male,1965-03-11,265,1,,0,,0,,0,,0,,0,266,1,,0,,0,,0,267,71,272,139,86,277,1,,0,278,1,279,1,280,1,281,140,286,5.2,291,85,296,40.9758051948052,301,0.99
+306,Amanda,Arnold,female,1960-03-11,307,1,,0,,0,,0,,0,,0,308,1,,0,,0,,0,309,110,314,112,89,,0,,0,319,1,320,1,321,1,322,113,327,9,332,49,337,37.1057575757576,342,1.03
+347,Adrian,Avery,male,1947-01-07,348,2,,0,,0,,0,,0,,0,,0,,0,,0,,0,349,92,354,78,72,,0,,0,,0,,0,,0,359,158,364,7.2,369,84,374,37.3408333333333,379,1.08635000048
+384,Alan,Bailey,male,1961-03-10,385,2,386,1,,0,,0,,0,,0,,0,387,1,,0,,0,388,80,393,100,70,,0,,0,398,1,,0,,0,399,133,404,8.2,409,77,414,36.3997142857143,419,1.04
+424,Alexander,Baker,male,1981-01-04,425,1,,0,,0,,0,,0,,0,,0,,0,,0,,0,426,78,431,146,75,,0,,0,436,1,437,1,,0,438,143,443,3.9,448,77,453,40,458,1.01423888864889
+463,Amelia,Ball,female,1946-03-04,464,2,,0,,0,,0,,0,,0,,0,,0,,0,465,1,466,68,471,104,75,,0,,0,476,1,477,1,478,1,479,80,484,15,489,77,494,33,499,1.09146666934667
+504,Amy,Bell,female,1965-03-12,505,2,,0,,0,,0,,0,506,1,,0,,0,,0,,0,507,96,512,107,72,,0,,0,,0,517,1,,0,518,146,523,2.8,528,46,533,44,538,1.06115952320952

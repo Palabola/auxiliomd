@@ -1,0 +1,2 @@
+-ehr-embed: called by the EHR - select patient, then launch
+-standalone: called by third-party app - launch, then select patient
