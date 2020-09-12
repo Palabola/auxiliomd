@@ -9,5 +9,5 @@ AuxilioMD is a platform that allows researchers to run their risk models on pati
 
 ## Contributors
 
-Developed by Teckhua Chiang and Surtaz Khan
+Developed by Teckhua Chiang and Surtaz Khan<br/> 
 In collaboration with Bella Xiong, Aidan Neziri, Rami Rajjoub
